@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import jdbc.ConnectionFactory;
 
 /**
  *
@@ -91,9 +92,9 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-        if(txtSenha.getText().equals("12d21m95")){
-            JOptionPane.showMessageDialog(null, "Banco de dados conectado");
+        
+        if(txtSenha.getText().equals(ConnectionFactory.getPass())){
+           // JOptionPane.showMessageDialog(null, "Banco de dados conectado");
             TelaPrincipalMDI telaMain = new TelaPrincipalMDI();
             telaMain.setVisible(true);
             this.dispose();

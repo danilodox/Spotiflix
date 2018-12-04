@@ -27,4 +27,9 @@ public class ConnectionFactory {
              throw new RuntimeException(e);
              }
         }
+        
+        public static String getPass(){
+            return PASS;
+        }
+        
 }

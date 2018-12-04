@@ -8,7 +8,7 @@ package test;
 import dao.UsuarioDao;
 import java.sql.SQLException;
 import java.util.List;
-import jdbc.Usuario;
+import usuarios.Usuario;
 
 /**
  *

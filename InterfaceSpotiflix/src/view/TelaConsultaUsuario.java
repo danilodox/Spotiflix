@@ -8,7 +8,7 @@ package view;
 import dao.UsuarioDao;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import jdbc.Usuario;
+import usuarios.Usuario;
 
 /**
  *

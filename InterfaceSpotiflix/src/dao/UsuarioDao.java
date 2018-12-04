@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import jdbc.ConnectionFactory;
-import jdbc.Usuario;
+import usuarios.Usuario;
 
 /**
  *
