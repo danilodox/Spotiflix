@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import javax.swing.JOptionPane;
@@ -10,7 +5,8 @@ import jdbc.ConnectionFactory;
 
 /**
  *
- * @author danil
+ * @author Danilo
+ * https://github.com/danilodox/Spotiflix
  */
 public class TelaLogin extends javax.swing.JFrame {
 
@@ -48,6 +44,12 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coollogo_com-66911401.png"))); // NOI18N
+
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,10 +94,10 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        //botão Sign in
         if(txtSenha.getText().equals(ConnectionFactory.getPass())){
            // JOptionPane.showMessageDialog(null, "Banco de dados conectado");
-            TelaPrincipalMDI telaMain = new TelaPrincipalMDI();
+            TelaPrincipalMDI telaMain = new TelaPrincipalMDI(); 
             telaMain.setVisible(true);
             this.dispose();
         }else{
@@ -105,6 +107,10 @@ public class TelaLogin extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments

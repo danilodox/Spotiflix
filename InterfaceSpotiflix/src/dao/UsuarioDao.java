@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -17,16 +12,18 @@ import usuarios.Usuario;
 
 /**
  *
- * @author danil
+ * @author Danilo
+ * https://github.com/danilodox/Spotiflix
  */
 public class UsuarioDao {
 
     private Connection connection;
 
     public UsuarioDao() {
+        //cria a conexão
         this.connection = new ConnectionFactory().getConnection();
     }
-
+    // método que retorna a lista de todos os usuarios inseridos
     public List<Usuario> getList() throws SQLException {
         try {
             List<Usuario> usuarios = new ArrayList<>();
@@ -53,7 +50,7 @@ public class UsuarioDao {
             throw new RuntimeException(e);
         }
     }
-
+    //método para adicionar usuários, passando como parâmetro um objeto do tipo Usuario
     public void adiciona(Usuario usuario) throws SQLException {
         String sql = "insert into usuario "
                 + "(login, cpf, nome, senha, email, telefone, cidade, estado)"
@@ -83,7 +80,7 @@ public class UsuarioDao {
         }
 
     }
-
+    //método para remover o usuário
     public void remove(Usuario usuario) {
         try {
             PreparedStatement stmt = connection.prepareStatement("delete "
@@ -97,7 +94,8 @@ public class UsuarioDao {
             throw new RuntimeException(e);
         }
     }
-
+    
+    //método para alterar os dados do usuário
     public void altera(Usuario usuario) {
         
         String sql = "update usuario set login=?, cpf=?," 

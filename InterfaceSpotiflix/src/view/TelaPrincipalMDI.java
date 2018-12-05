@@ -1,17 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
+import viewUsuario.TelaDeleteUsuario;
+import viewUsuario.TelaCadastroUsuario;
+import viewUsuario.TelaUpdateUsuario;
+import viewUsuario.TelaConsultaUsuario;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import viewMusica.TelaCadastroMusica;
+import viewMusica.TelaConsultaMusica;
+import viewMusica.TelaDeleteMusica;
+import viewMusica.TelaUpdateMusica;
 
 /**
  *
- * @author danil
+ * @author Danilo
+ * https://github.com/danilodox/Spotiflix
  */
 public class TelaPrincipalMDI extends javax.swing.JFrame {
 
@@ -51,6 +55,11 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
 
         jMenu3.setText("jMenu3");
 
@@ -63,11 +72,11 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 399, Short.MAX_VALUE)
+            .addGap(0, 782, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 1035, Short.MAX_VALUE)
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
@@ -166,6 +175,43 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconeMusic.png"))); // NOI18N
+        jMenu6.setText("Músicas");
+
+        jMenuItem13.setText("Adicionar");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem13);
+
+        jMenuItem14.setText("Consultar");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem14);
+
+        jMenuItem15.setText("Atualizar");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem15);
+
+        jMenuItem16.setText("Remover");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem16);
+
+        jMenuBar1.add(jMenu6);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -204,7 +250,9 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-       TelaCadastroUsuario telaCadUser = new TelaCadastroUsuario();
+      //aba de cadastrar user
+        TelaCadastroUsuario telaCadUser = new TelaCadastroUsuario();
+       
         
         jDesktopPane1.add(telaCadUser);
         
@@ -214,7 +262,8 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-         TelaConsultaUsuario telaConsultaUser = null;
+         //aba de consulta de user
+        TelaConsultaUsuario telaConsultaUser = null;
         try {
             telaConsultaUser = new TelaConsultaUsuario();
         } catch (SQLException ex) {
@@ -228,7 +277,8 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-         TelaUpdateUsuario telaUpUser = new TelaUpdateUsuario();
+        //aba de atualizar o user
+        TelaUpdateUsuario telaUpUser = new TelaUpdateUsuario();
         
         jDesktopPane1.add(telaUpUser);
         
@@ -236,16 +286,55 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-         TelaDeleteUsuario telaDelUser = new TelaDeleteUsuario();
+       //aba de deletar o user 
+        TelaDeleteUsuario telaDelUser = new TelaDeleteUsuario();
         
         jDesktopPane1.add(telaDelUser);
         
         telaDelUser.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        //tela de cadastro de musica
+        TelaCadastroMusica telaCadMusic = new TelaCadastroMusica();
+        
+        jDesktopPane1.add(telaCadMusic);
+        
+        telaCadMusic.setVisible(true);
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        //tela de consulta a musica
+        TelaConsultaMusica telaConsultaMusic = null;
+        try {
+            telaConsultaMusic = new TelaConsultaMusica();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPrincipalMDI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        jDesktopPane1.add(telaConsultaMusic);
+        
+        telaConsultaMusic.setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+       //tela de atualizar a musica
+        TelaUpdateMusica telaUpMusic = new TelaUpdateMusica();
+        
+        jDesktopPane1.add(telaUpMusic);
+        
+        telaUpMusic.setVisible(true);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        //tela de remover a musica
+        TelaDeleteMusica telaDelMusic = new TelaDeleteMusica();
+        
+        jDesktopPane1.add(telaDelMusic);
+        
+        telaDelMusic.setVisible(true);
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -274,7 +363,7 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipalMDI().setVisible(true);
+                new TelaPrincipalMDI().setVisible(true);//manter o menu sembre aberto
             }
         });
     }
@@ -286,11 +375,16 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

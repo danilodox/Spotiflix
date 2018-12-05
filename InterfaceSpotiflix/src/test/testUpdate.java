@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package test;
 
 import dao.UsuarioDao;
@@ -11,8 +6,10 @@ import usuarios.Usuario;
 
 /**
  *
- * @author danil
+ * @author Danilo
+ * https://github.com/danilodox/Spotiflix
  */
+
 public class testUpdate {
      public static void main(String[] args) throws SQLException{
          //ready to record
